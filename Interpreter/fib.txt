@@ -1,0 +1,46 @@
+//fib
+ldc 1
+ldc 1
+st 1
+st 2
+//sum
+ldc 0
+st 3
+//cycle
+cycle:
+st 0
+//uv sum
+ld 3
+ld 1
+add
+st 7
+ldc 2
+ld 7
+mod
+jnz nesum
+ld 7
+st 3
+nesum:
+
+//obmen i slozh
+ld 2
+ld 1
+st 2
+ld 2
+add
+st 1
+//dva limona
+ldc 20000000
+ld 1
+cmp
+jg co
+jmp cycle
+///konec cycla
+//clozhenie poslednegoo
+ld 3
+ld 1
+add
+st 3
+
+co:
+ret
