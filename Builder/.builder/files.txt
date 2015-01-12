@@ -1,3 +1,0 @@
-GeomBuilder.exe
-
-GeometryLibrary.dll
