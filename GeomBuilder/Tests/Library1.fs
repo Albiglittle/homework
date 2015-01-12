@@ -23,7 +23,7 @@ module Tests =
 
     [<Test>]
     let ``Bounding box case with intersection``() = 
-        let a = {X = -4.; Y = 3.}
+        let a = {X = -3.; Y = 3.}
         let b = {X = 2.; Y = -2.}
         let c = {X = 0.; Y = 0.}
         let d = {X = -5.;  Y = 5.}
