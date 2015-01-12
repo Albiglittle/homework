@@ -1,0 +1,12 @@
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeomBuilder\bin\Debug\GeomBuilder.exe.config
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeomBuilder\obj\Debug\GeomBuilder.csprojResolveAssemblyReference.cache
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeomBuilder\obj\Debug\GeomBuilder.Form1.resources
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeomBuilder\obj\Debug\GeomBuilder.Properties.Resources.resources
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeomBuilder\obj\Debug\GeomBuilder.csproj.GenerateResource.Cache
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeomBuilder\bin\Debug\GeomBuilder.exe
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeomBuilder\bin\Debug\GeomBuilder.pdb
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeomBuilder\bin\Debug\GeometryLibrary.dll
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeomBuilder\bin\Debug\GeometryLibrary.pdb
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeomBuilder\bin\Debug\GeometryLibrary.xml
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeomBuilder\obj\Debug\GeomBuilder.exe
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeomBuilder\obj\Debug\GeomBuilder.pdb

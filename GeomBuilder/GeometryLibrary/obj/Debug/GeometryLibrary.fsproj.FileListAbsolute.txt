@@ -1,0 +1,8 @@
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeometryLibrary\bin\Debug\GeometryLibrary.XML
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeometryLibrary\bin\Debug\GeometryLibrary.dll
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeometryLibrary\bin\Debug\GeometryLibrary.pdb
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeometryLibrary\bin\Debug\FSharp.Core.dll
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeometryLibrary\bin\Debug\FSharp.Core.xml
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeometryLibrary\obj\Debug\GeometryLibrary.fsprojResolveAssemblyReference.cache
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeometryLibrary\obj\Debug\GeometryLibrary.dll
+C:\Users\Евгений\Desktop\GeomBuilder-master\GeometryLibrary\obj\Debug\GeometryLibrary.pdb

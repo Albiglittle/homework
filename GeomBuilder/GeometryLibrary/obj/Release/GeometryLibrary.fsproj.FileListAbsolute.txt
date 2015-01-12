@@ -1,0 +1,8 @@
+C:\Users\Артем\Desktop\GeomBuilder-mast\GeometryLibrary\bin\Release\GeometryLibrary.XML
+C:\Users\Артем\Desktop\GeomBuilder-mast\GeometryLibrary\bin\Release\GeometryLibrary.dll
+C:\Users\Артем\Desktop\GeomBuilder-mast\GeometryLibrary\bin\Release\GeometryLibrary.pdb
+C:\Users\Артем\Desktop\GeomBuilder-mast\GeometryLibrary\bin\Release\FSharp.Core.dll
+C:\Users\Артем\Desktop\GeomBuilder-mast\GeometryLibrary\bin\Release\FSharp.Core.xml
+C:\Users\Артем\Desktop\GeomBuilder-mast\GeometryLibrary\bin\Release\ru\FSharp.Core.resources.dll
+C:\Users\Артем\Desktop\GeomBuilder-mast\GeometryLibrary\obj\Release\GeometryLibrary.dll
+C:\Users\Артем\Desktop\GeomBuilder-mast\GeometryLibrary\obj\Release\GeometryLibrary.pdb
