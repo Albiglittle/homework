@@ -20,7 +20,7 @@ namespace InGodWeTrust
         {
             if (!CheckDate())
             {
-                Console.WriteLine("Извините, сегодня воскресение. Сотворить людей не получится!");
+                Console.WriteLine("извините, сегодня воскресение. сотворить людей не получится!");
                 return;
             }
 
