@@ -1,5 +1,5 @@
 ﻿using System;
-using InGodWeTrust.Handlers;
+using InGodWeTrust.Helpers;
 using InGodWeTrust.Humans;
 
 namespace InGodWeTrust
@@ -20,16 +20,16 @@ namespace InGodWeTrust
         {
             if (!CheckDate())
             {
-                Console.WriteLine("извините, сегодня воскресение. сотворить людей не получится!");
+                Console.WriteLine(Properties.Resources.CheckDateMessage);
                 return;
             }
 
-            Console.WriteLine("Здравствуйте. Вы используете консоль бога.\nСколько людей вы хотите сотворить?");
+            Console.WriteLine(Properties.Resources.Greeting);
 
             int humansCount;
             while (!int.TryParse(Console.ReadLine(), out humansCount) || humansCount < 1)
             {
-                Console.WriteLine("Вы ввели некорректное число. Попробуйте еще раз");
+                Console.WriteLine(Properties.Resources.IncorrectNumberMessage);
             }
 
             printHelper.PrintColourInfo();

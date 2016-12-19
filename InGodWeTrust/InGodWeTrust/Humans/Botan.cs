@@ -17,7 +17,7 @@ namespace InGodWeTrust.Humans
 
         public override string ToString()
         {
-            return base.ToString() + string.Format(", Средняя оценка: {0:F}", averageRating);
+            return base.ToString() + Properties.Resources.PreAverageRating + string.Format("{0:F}", averageRating);
         }
     }
 }

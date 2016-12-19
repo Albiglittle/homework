@@ -19,7 +19,11 @@ namespace InGodWeTrust.Humans
 
         public override string ToString()
         {
-            return string.Format("Имя: {0}, Возраст: {1}, Пол: {2}", name, age, gender == Gender.Male ? "М" : "Ж");
+            return
+                Properties.Resources.PreName + name + 
+                Properties.Resources.PreAge + age + 
+                Properties.Resources.PreSex + 
+                (gender == Gender.Male ? Properties.Resources.Male : Properties.Resources.Female);
         }
     }
 }

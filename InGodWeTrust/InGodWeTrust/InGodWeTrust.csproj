@@ -45,6 +45,7 @@
     <Compile Include="God.cs" />
     <Compile Include="GodConsole.cs" />
     <Compile Include="Helpers\CreationHelper.cs" />
+    <Compile Include="Helpers\NameHelper.cs" />
     <Compile Include="Helpers\PrintHelper.cs" />
     <Compile Include="Humans\Botan.cs" />
     <Compile Include="Humans\CoolParent.cs" />
@@ -54,6 +55,17 @@
     <Compile Include="IGod.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

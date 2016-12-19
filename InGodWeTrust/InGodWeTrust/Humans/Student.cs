@@ -15,7 +15,7 @@ namespace InGodWeTrust.Humans
 
         public override string ToString()
         {
-            return string.Format("{0}, Отчество: {1}", base.ToString(), patronymic);
+            return base.ToString() + Properties.Resources.PrePatronimic + patronymic;
         }
     }
 }

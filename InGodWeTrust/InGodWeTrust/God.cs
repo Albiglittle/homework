@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using InGodWeTrust.Handlers;
+using InGodWeTrust.Helpers;
 using InGodWeTrust.Humans;
+
 
 namespace InGodWeTrust
 {
     internal class God : IGod
     {
+        private readonly NameHelper nameHelper = new NameHelper();
         private readonly CreationHelper creationHelper = new CreationHelper();
-        public List<Human> Humans { get; set; }
+        private List<Human> Humans { get; set; }
 
         public God()
         {
@@ -43,11 +45,11 @@ namespace InGodWeTrust
             var gender = creationHelper.GetRandomGender();
             return CreateHuman(gender);
         }
-
+        // абстрактный тип !
         public Human CreateHuman(Gender gender)
         {
             Human human;
-            var name = creationHelper.GetRandomName(gender);
+            var name = nameHelper.GetRandomName(gender);
             var humanType = creationHelper.GetRandomHumanType();
             switch (humanType)
             {
@@ -86,7 +88,7 @@ namespace InGodWeTrust
             if (human is Student)
             {
                 var student = human as Student;
-                var name = creationHelper.GetNameByPatronymic(student.patronymic);
+                var name = nameHelper.GetNameByPatronymic(student.patronymic);
                 var botan = student as Botan;
 
                 if (botan != null)
@@ -102,7 +104,7 @@ namespace InGodWeTrust
             else if (human is Parent)
             {
                 var gender = creationHelper.GetRandomGender();
-                var name = creationHelper.GetRandomName(gender);
+                var name = nameHelper.GetRandomName(gender);
 
                 var coolParent = human as CoolParent;
                 if (coolParent != null)
@@ -126,7 +128,7 @@ namespace InGodWeTrust
         private Student CreateStudent(string name, Gender gender)
         {
             var age = creationHelper.GetStudentRandomAge();
-            var patronymic = creationHelper.GetRandomPatronymic(gender);
+            var patronymic = nameHelper.GetRandomPatronymic(gender);
 
             return new Student(patronymic, name, age, gender);
         }
@@ -134,7 +136,7 @@ namespace InGodWeTrust
         private Botan CreateBotan(string name, Gender gender, int? money = null)
         {
             var age = creationHelper.GetStudentRandomAge();
-            var patronymic = creationHelper.GetRandomPatronymic(gender);
+            var patronymic = nameHelper.GetRandomPatronymic(gender);
             var averageRating = money == null
                 ? creationHelper.GetRandomAverageRating()
                 : creationHelper.GetAvgRatingByMoney(money.Value);

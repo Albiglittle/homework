@@ -1,7 +1,7 @@
 ﻿using System;
 using InGodWeTrust.Humans;
 
-namespace InGodWeTrust.Handlers
+namespace InGodWeTrust.Helpers
 {
     internal sealed class PrintHelper
     {
@@ -35,22 +35,21 @@ namespace InGodWeTrust.Handlers
         public void PrintColourInfo()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
-            Console.Write("Обычные родители");
+            Console.Write(Properties.Resources.Parents);
 
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.Write(" Студенты");
-
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write(" Ботаны");
+            Console.Write(Properties.Resources.Students);
 
             Console.ForegroundColor = ConsoleColor.Cyan;
-            Console.Write(" Крутые предки\n");
+            Console.Write(Properties.Resources.CoolParents);
+
+            Console.ForegroundColor = ConsoleColor.Red;
+            Console.Write(Properties.Resources.Botans + "\n");
 
             Console.Write(string.Empty);
 
             Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine("Сумма всех денег крутых предков выведены в файл TotalMoney.txt");
-            Console.WriteLine("(рядом с исполняемым файлом)");
+            Console.WriteLine(Properties.Resources.TotalMoneyFile);
 
             Console.WriteLine(string.Empty);
         }

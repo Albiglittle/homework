@@ -15,7 +15,7 @@ namespace InGodWeTrust.Humans
 
         public override string ToString()
         {
-            return base.ToString() + ", Количество денег: ";
+            return base.ToString() + Properties.Resources.PreMoneyAmount;
         }
     }
 }

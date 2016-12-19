@@ -15,7 +15,7 @@ namespace InGodWeTrust.Humans
 
         public override string ToString()
         {
-            return string.Format("{0}, Количество детей: {1}", base.ToString(), childrenCount);
+            return  base.ToString() + Properties.Resources.PreKidsAmount + childrenCount;
         }
     }
 }
