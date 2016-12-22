@@ -15,7 +15,6 @@ namespace ReflexingAdvancedGod
     {
         const string MyNamespace = "ReflexingAdvancedGod";
         const string MyAssembly = "ReflexingAdvancedGod";
-        const string PatronymicPropertyName = "Patronymic";
 
         Random random = new Random();
         
@@ -36,22 +35,26 @@ namespace ReflexingAdvancedGod
             return creators[random.Next(creators.Count)]();
         }
 
-        public IHasName Couple(Human first, Human second)
+        private IHasName GetPreparedChild(string childType, Human first, Human second)
         {
-            if (first == null || second == null)
-            {
-                throw new ArgumentNullException();
-            }
-            if (first.Gender == second.Gender)
-            {
-                throw new EqualGenderException();
-            }
+            Type typeGen = GetTypeByName(childType);
 
-            List<Human> humans = new List<Human>(new Human[] { first, second });
-            string[] classes = humans.Select(human => human.GetType().Name).ToArray();
-            Func<int, string> otherClass = (count) => classes[(count + 1) % classes.Length];
-            
-            var liked = new bool[] { false, false };
+            var constructor = typeGen.GetConstructors(
+                System.Reflection.BindingFlags.NonPublic |
+                System.Reflection.BindingFlags.NonPublic |
+                System.Reflection.BindingFlags.Instance)[0];
+
+            string name = GenerateChildName(second);
+
+            var preparedChild = (IHasName)constructor.Invoke(new object[] { name });
+
+            SetPatronymicIfExists(preparedChild, first, second);
+
+            return preparedChild;
+        }
+
+        private string ChildTypeRepresent (List<Human> humans, Func<int, string> someClass, bool[] compatibility)
+        {
             string childType = null;
             for (int i = 0; i < humans.Count; i++)
             {
@@ -59,31 +62,37 @@ namespace ReflexingAdvancedGod
                 while (enumerator.MoveNext())
                 {
                     CoupleAttribute attribute = enumerator.Current;
-                    if (attribute.Pair == otherClass(i))
+                    if (attribute.Pair == someClass(i))
                     {
                         childType = attribute.ChildType;
-                        liked[i] = random.NextDouble() < attribute.Probability;
+                        compatibility[i] = random.NextDouble() < attribute.Probability;
                         string likeString = humans[i].Representation + " " +
-                            (liked[i] ? Resources.Like : Resources.NotLike) + " " +
+                            (compatibility[i] ? Resources.Like : Resources.NotLike) + " " +
                             humans[(i + 1) % humans.Count].Representation;
                         PrintHelper.Write(PrintType.Info, likeString);
                         break;
                     }
                 }
             }
+            return childType;
+        }
+
+        public IHasName Couple(Human first, Human second)
+        {
+            if (first == null || second == null) { throw new ArgumentNullException(); }
+            if (first.Gender == second.Gender) { throw new EqualGenderException(); }
+
+            List<Human> humans = new List<Human>(new Human[] { first, second });
+            string[] classes = humans.Select(human => human.GetType().Name).ToArray();
+            Func<int, string> otherClass = (count) => classes[(count + 1) % classes.Length];
+            
+            var liked = new bool[] { false, false };
+
+            string childType = ChildTypeRepresent(humans, otherClass, liked);
 
             if (liked.Any(x => !x)) { return null; }
 
-            Type typeGen = GetTypeByName(childType);
-
-            var constructor = typeGen.GetConstructors(
-                System.Reflection.BindingFlags.NonPublic |
-                System.Reflection.BindingFlags.NonPublic |
-                System.Reflection.BindingFlags.Instance)[0];
-            string name = GenerateChildName(second);
-            var result = (IHasName)constructor.Invoke(new object[] { name });
-            SetPatronymicIfExists(result, first, second);
-            return result;
+            return GetPreparedChild(childType, first, second);
         }
 
         private string GenerateChildName(Human human)
@@ -112,7 +121,7 @@ namespace ReflexingAdvancedGod
                 System.Reflection.BindingFlags.NonPublic |
                 System.Reflection.BindingFlags.NonPublic |
                 System.Reflection.BindingFlags.Instance).FirstOrDefault(
-                    instance => instance.Name == PatronymicPropertyName);
+                    instance => instance.Name == Human.PatronymicPropertyName);
             if (patronymicProperty != null)
             {
                 var s = NamesHelper.GeneratePatronimyc(

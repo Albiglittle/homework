@@ -11,15 +11,12 @@ namespace ReflexingAdvancedGod
 {
     internal sealed class Program
     {
-        internal sealed class Static
-        {
-            public static string InitialGreeting = Resources.InitialGreeting;
-            public static string CheckEqualGender = Resources.CheckEqualGender;
-            public static string CheckDate = Resources.CheckDateMessage;
-            public static string PromptAction = Resources.SuggestAction;
-            public static string NotLiked = Resources.NotLikeEachOther;
-           
-        }
+        private static string InitialGreeting = Resources.InitialGreeting;
+        private static string CheckEqualGender = Resources.CheckEqualGender;
+        private static string CheckDate = Resources.CheckDateMessage;
+        private static string PromptAction = Resources.SuggestAction;
+        private static string NotLiked = Resources.NotLikeEachOther;
+
         private static ConsoleKey[] ExitKeys = { ConsoleKey.F10, ConsoleKey.Q };
         private static ConsoleKey ContinueKey = ConsoleKey.Enter;
         
@@ -29,11 +26,11 @@ namespace ReflexingAdvancedGod
             var day = DateTime.Now.DayOfWeek;
             if (day == DayOfWeek.Sunday)
             {
-                PrintHelper.Write(PrintType.Info, Static.CheckDate);
+                PrintHelper.Write(PrintType.Info, CheckDate);
                 return;
             }
 
-            PrintHelper.Write(PrintType.Info, Static.InitialGreeting);
+            PrintHelper.Write(PrintType.Info, InitialGreeting);
 
             IGod god = new God();
 
@@ -48,18 +45,19 @@ namespace ReflexingAdvancedGod
                     PrintHelper.Write(PrintType.Parent, second.Representation);
 
                     var child = god.Couple(first, second);
+
                     if (child != null)
                     {
                         PrintHelper.Write(PrintType.Child, child.Representation);
                     }
                     else
                     {
-                        PrintHelper.Write(PrintType.Exception, Static.NotLiked);
+                        PrintHelper.Write(PrintType.Exception, NotLiked);
                     }
                 }
                 catch (EqualGenderException exception)
                 {
-                    PrintHelper.Write(PrintType.Exception, Static.CheckEqualGender);
+                    PrintHelper.Write(PrintType.Exception, CheckEqualGender);
                 }
                 Console.WriteLine();
                 
@@ -68,7 +66,7 @@ namespace ReflexingAdvancedGod
 
         private static bool PromptUser()
         {
-            PrintHelper.Write(PrintType.Info, Static.PromptAction);
+            PrintHelper.Write(PrintType.Info, PromptAction);
             var key = Console.ReadKey(true).Key;
             while (key != ConsoleKey.F10 && key != ConsoleKey.Q && key != ConsoleKey.Enter)
             {
