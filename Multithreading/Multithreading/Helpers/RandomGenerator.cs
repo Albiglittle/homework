@@ -7,8 +7,8 @@ namespace Multithreading.Helpers
     {
         private const int MaxStudentMark = 5;
         private const int MinStudentMark = 2;
-        private const int MaxStudentsNumber = 10;
-        private const int MinStudentsNumber = 5;
+        private const int MaxStudentsNumber = 1;
+        private const int MinStudentsNumber = 1;
         private const int MinTime = 2;
         private static readonly Random Random = new Random();
 

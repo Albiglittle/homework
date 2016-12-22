@@ -63,7 +63,9 @@ namespace Multithreading.Views
         public void FinishExam()
         {
             Action(() => {
-                UpdateStartButtonState(190);
+                StartButton.Enabled = true;
+                StartButton.Text = Resources.StartNextExam;
+                
             }, StartButton);
             MessageBox.Show(Resources.ExamFinished);
         }
@@ -101,7 +103,8 @@ namespace Multithreading.Views
         private void OnButtonInitialClick(object sender, EventArgs e)
         {
             ResetProgress();
-            UpdateStartButtonState(140);
+            StartButton.Enabled = false;
+            StartButton.Text = Resources.StartButtonExamInProgress;
             examProgressBar.Value = 0;
             studentsResultsListView.Items.Clear();
             studentsResultsListView.Refresh();
@@ -110,29 +113,6 @@ namespace Multithreading.Views
                 ExamStarted.Invoke(this, EventArgs.Empty);
             }
             
-        }
-
-        private void UpdateStartButtonState(int size)
-        {
-            switch (size)
-            {
-                case 120:
-                    StartButton.Enabled = true;
-                    StartButton.Text = Resources.StartButtonStartExam;
-                    break;
-                case 140:
-                    StartButton.Enabled = false;
-                    StartButton.Text = Resources.StartButtonExamInProgress;
-                    break;
-                case 190:
-                    StartButton.Enabled = true;
-                    StartButton.Text = Resources.StartNextExam;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
-            }
-            StartButton.Width = (int)size;
-            StartButton.Location = new Point((ClientSize.Width - StartButton.Width) / 2, 348);
         }
 
         private void AddColumnsListView()

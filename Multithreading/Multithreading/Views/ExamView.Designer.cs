@@ -44,9 +44,9 @@ namespace Multithreading.Views
             // 
             // StartButton
             // 
-            this.StartButton.Location = new System.Drawing.Point(112, 348);
+            this.StartButton.Location = new System.Drawing.Point(103, 348);
             this.StartButton.Name = "StartButton";
-            this.StartButton.Size = new System.Drawing.Size(100, 33);
+            this.StartButton.Size = new System.Drawing.Size(120, 33);
             this.StartButton.TabIndex = 0;
             this.StartButton.Text = global::Multithreading.Properties.Resources.StartButtonStartExam;
             this.StartButton.UseVisualStyleBackColor = true;
@@ -113,7 +113,7 @@ namespace Multithreading.Views
             this.MaximizeBox = false;
             this.Name = "ExamView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = Resources.MnogopotochieExam;
+            this.Text = "Экзамен по многопоточию";
             this.Load += new System.EventHandler(this.ExamView_Load);
             this.ResumeLayout(false);
 
