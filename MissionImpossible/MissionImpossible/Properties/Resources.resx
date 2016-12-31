@@ -1,0 +1,331 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ActorsToolTip" xml:space="preserve">
+    <value>Enter movie actors</value>
+  </data>
+  <data name="AttributeActor" xml:space="preserve">
+    <value>Актёр</value>
+  </data>
+  <data name="AttributeCountry" xml:space="preserve">
+    <value>Страна</value>
+  </data>
+  <data name="AttributeDirector" xml:space="preserve">
+    <value>Режиссер</value>
+  </data>
+  <data name="AttributeName" xml:space="preserve">
+    <value>Название</value>
+  </data>
+  <data name="AttributePoster" xml:space="preserve">
+    <value>Постер</value>
+  </data>
+  <data name="AttributeYear" xml:space="preserve">
+    <value>Год</value>
+  </data>
+  <data name="CountryToolTip" xml:space="preserve">
+    <value>Enter movie country</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="DefaultMovieImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\ImgResources\no-image.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DirectorToolTip" xml:space="preserve">
+    <value>Enter movie director</value>
+  </data>
+  <data name="ExitPrompt" xml:space="preserve">
+    <value>Вы уверены, что хотите выйти?</value>
+  </data>
+  <data name="InvalidInput" xml:space="preserve">
+    <value>Поле заполнено некорректно</value>
+  </data>
+  <data name="MovieDeletePrompt" xml:space="preserve">
+    <value>Вы уверены, что хотите удалить фильм "{0}"?</value>
+  </data>
+  <data name="NameToolTip" xml:space="preserve">
+    <value>Enter movie name</value>
+  </data>
+  <data name="YearToolTip" xml:space="preserve">
+    <value>Enter movie year</value>
+  </data>
+  <data name="ActorAHathaway" xml:space="preserve">
+    <value>Энн Хэтэуэй</value>
+  </data>
+  <data name="ActorBPitt" xml:space="preserve">
+    <value>Брэд Питт</value>
+  </data>
+  <data name="ActorCBale" xml:space="preserve">
+    <value>Кристиан Бэйл</value>
+  </data>
+  <data name="ActorCHabenskiy" xml:space="preserve">
+    <value>Константин Хабенский</value>
+  </data>
+  <data name="ActorENorton" xml:space="preserve">
+    <value>Эдвард Нортон</value>
+  </data>
+  <data name="ActorFCluzet" xml:space="preserve">
+    <value>Франсуа Клюзе</value>
+  </data>
+  <data name="ActorHBCarter" xml:space="preserve">
+    <value>Хелена Бонем Картер</value>
+  </data>
+  <data name="ActorJCarrey" xml:space="preserve">
+    <value>Джим Керри</value>
+  </data>
+  <data name="ActorJFoster" xml:space="preserve">
+    <value>Джоди Фостер</value>
+  </data>
+  <data name="ActorKReeves" xml:space="preserve">
+    <value>Киану Ривз</value>
+  </data>
+  <data name="ActorKWimmer" xml:space="preserve">
+    <value>Курт Уиммер</value>
+  </data>
+  <data name="ActorLFishburne" xml:space="preserve">
+    <value>Лоренс Фишбёрн</value>
+  </data>
+  <data name="ActorMDouglas" xml:space="preserve">
+    <value>Майкл Дуглас</value>
+  </data>
+  <data name="ActorMMcConaughey" xml:space="preserve">
+    <value>Мэттью МакКонахи</value>
+  </data>
+  <data name="ActorOSy" xml:space="preserve">
+    <value>Омар Си</value>
+  </data>
+  <data name="ActorTDiggs" xml:space="preserve">
+    <value>Тэй Диггз</value>
+  </data>
+  <data name="ActorWSmith" xml:space="preserve">
+    <value>Уилл Смит</value>
+  </data>
+  <data name="CountryFrance" xml:space="preserve">
+    <value>Франция</value>
+  </data>
+  <data name="CountryRussia" xml:space="preserve">
+    <value>Россия</value>
+  </data>
+  <data name="CountryUnitedKingdom" xml:space="preserve">
+    <value>Великобритания</value>
+  </data>
+  <data name="CountryUSA" xml:space="preserve">
+    <value>США</value>
+  </data>
+  <data name="DirectorAKrasovskiy" xml:space="preserve">
+    <value>Алексей Красовский</value>
+  </data>
+  <data name="DirectorCNolan" xml:space="preserve">
+    <value>Кристофер Нолан</value>
+  </data>
+  <data name="DirectorDFincher" xml:space="preserve">
+    <value>Дэвид Финчер</value>
+  </data>
+  <data name="DirectorFLawrence" xml:space="preserve">
+    <value>Френсис Лоуренс</value>
+  </data>
+  <data name="DirectorKWimmer" xml:space="preserve">
+    <value>Курт Уиммер</value>
+  </data>
+  <data name="DirectorLWachowski" xml:space="preserve">
+    <value>Лана Вачовски</value>
+  </data>
+  <data name="DirectorONakache" xml:space="preserve">
+    <value>Оливье Накаш</value>
+  </data>
+  <data name="DirectorRZemeckis" xml:space="preserve">
+    <value>Роберт Земекис</value>
+  </data>
+  <data name="DirectorTShadyac" xml:space="preserve">
+    <value>Том Шэдьяк</value>
+  </data>
+  <data name="MovieBruceAlmighty" xml:space="preserve">
+    <value>Брюс Всемогущий</value>
+  </data>
+  <data name="MovieCollector" xml:space="preserve">
+    <value>Коллектор</value>
+  </data>
+  <data name="MovieConstantine" xml:space="preserve">
+    <value>Константин</value>
+  </data>
+  <data name="MovieContact" xml:space="preserve">
+    <value>Контакт</value>
+  </data>
+  <data name="MovieEquilibrium" xml:space="preserve">
+    <value>Эквилибриум</value>
+  </data>
+  <data name="MovieFightClub" xml:space="preserve">
+    <value>Бойцовский клуб</value>
+  </data>
+  <data name="MovieIAmLegend" xml:space="preserve">
+    <value>Я – легенда</value>
+  </data>
+  <data name="MovieInterstellar" xml:space="preserve">
+    <value>Интерстеллар</value>
+  </data>
+  <data name="MovieGame" xml:space="preserve">
+    <value>Игра</value>
+  </data>
+  <data name="MovieIntouchables" xml:space="preserve">
+    <value>Неприкасаемые</value>
+  </data>
+  <data name="MovieMatrix" xml:space="preserve">
+    <value>Матрица</value>
+  </data>
+  <data name="ImgPathBruce" xml:space="preserve">
+    <value>Bruce.jpg</value>
+  </data>
+  <data name="ImgPathCollector" xml:space="preserve">
+    <value>Collector.jpg</value>
+  </data>
+  <data name="ImgPathConstantine" xml:space="preserve">
+    <value>Constantine.jpg</value>
+  </data>
+  <data name="ImgPathEquilibrium" xml:space="preserve">
+    <value>Equilibrium.jpg</value>
+  </data>
+  <data name="ImgPathFightClub" xml:space="preserve">
+    <value>FightClub.jpg</value>
+  </data>
+  <data name="ImgPathIAmLegend" xml:space="preserve">
+    <value>IAmLegend.jpg</value>
+  </data>
+  <data name="ImgPathInterstellar" xml:space="preserve">
+    <value>Interstellar.jpg</value>
+  </data>
+  <data name="ImgPathIntouchables" xml:space="preserve">
+    <value>Intouchables.jpg</value>
+  </data>
+  <data name="ImgPathMatrix" xml:space="preserve">
+    <value>Matrix.jpg</value>
+  </data>
+  <data name="ImgPathTheGame" xml:space="preserve">
+    <value>TheGame.jpg</value>
+  </data>
+  <data name="DownloadInProcess" xml:space="preserve">
+    <value>Загрузка...</value>
+  </data>
+  <data name="ErrorInvalidCharacters" xml:space="preserve">
+    <value>Field contains invalid characters</value>
+  </data>
+  <data name="ErrorTitleIsIncorrect" xml:space="preserve">
+    <value>Title is incorrect</value>
+  </data>
+  <data name="ErrorYearIsIncorrect" xml:space="preserve">
+    <value>Year is incorrect</value>
+  </data>
+</root>
