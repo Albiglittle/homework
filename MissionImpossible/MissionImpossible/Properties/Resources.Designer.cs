@@ -160,7 +160,7 @@ namespace MissionImpossible.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Лоренс Фишбёрн.
+        ///   Ищет локализованную строку, похожую на Лоренс Фишберн.
         /// </summary>
         internal static string ActorLFishburne {
             get {
@@ -674,11 +674,29 @@ namespace MissionImpossible.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Удаление фильма.
+        /// </summary>
+        internal static string MoviesController_DeleteMovie {
+            get {
+                return ResourceManager.GetString("MoviesController_DeleteMovie", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Enter movie name.
         /// </summary>
         internal static string NameToolTip {
             get {
                 return ResourceManager.GetString("NameToolTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на #Введите имя#.
+        /// </summary>
+        internal static string ValidationViewHelper_ValidateListView_NoName {
+            get {
+                return ResourceManager.GetString("ValidationViewHelper_ValidateListView_NoName", resourceCulture);
             }
         }
         

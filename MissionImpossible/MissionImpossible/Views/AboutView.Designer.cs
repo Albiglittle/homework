@@ -1,4 +1,5 @@
-﻿namespace MissionImpossible.Views
+﻿using System.Windows.Forms;
+namespace MissionImpossible.Views
 {
     partial class AboutView
     {
@@ -34,6 +35,7 @@
             // 
             // label1
             // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(62, 30);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
@@ -44,14 +46,16 @@
             // 
             // btnOk
             // 
+            this.btnOk.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.btnOk.Location = new System.Drawing.Point(103, 69);
-            this.btnOk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOk.Margin = new System.Windows.Forms.Padding(2);
             this.btnOk.Name = "btnOk";
             this.btnOk.Size = new System.Drawing.Size(91, 26);
             this.btnOk.TabIndex = 1;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.OnOkButtonClicked);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(AboutView_KeyUp);
             // 
             // AboutView
             // 
@@ -60,8 +64,11 @@
             this.ClientSize = new System.Drawing.Size(304, 115);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AboutView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "About";
             this.ResumeLayout(false);
             this.PerformLayout();

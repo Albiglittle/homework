@@ -40,11 +40,11 @@ namespace MissionImpossible.Views
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
-            this.searchViewYear = new CustomTextBox();
-            this.searchViewCountry = new CustomTextBox();
-            this.searchViewActor = new CustomTextBox();
-            this.searchViewDirector = new CustomTextBox();
-            this.searchViewName = new CustomTextBox();
+            this.searchViewYear = new MissionImpossible.Views.Controls.CustomTextBox();
+            this.searchViewCountry = new MissionImpossible.Views.Controls.CustomTextBox();
+            this.searchViewActor = new MissionImpossible.Views.Controls.CustomTextBox();
+            this.searchViewDirector = new MissionImpossible.Views.Controls.CustomTextBox();
+            this.searchViewName = new MissionImpossible.Views.Controls.CustomTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.searchMovieFormEerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,6 +136,7 @@ namespace MissionImpossible.Views
             // searchViewYear
             // 
             this.searchViewYear.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchViewYear.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchViewYear.Location = new System.Drawing.Point(13, 141);
             this.searchViewYear.Margin = new System.Windows.Forms.Padding(2);
             this.searchViewYear.Name = "searchViewYear";
@@ -145,6 +146,7 @@ namespace MissionImpossible.Views
             // searchViewCountry
             // 
             this.searchViewCountry.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchViewCountry.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchViewCountry.Location = new System.Drawing.Point(13, 101);
             this.searchViewCountry.Margin = new System.Windows.Forms.Padding(2);
             this.searchViewCountry.Name = "searchViewCountry";
@@ -154,6 +156,7 @@ namespace MissionImpossible.Views
             // searchViewActor
             // 
             this.searchViewActor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchViewActor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchViewActor.Location = new System.Drawing.Point(13, 178);
             this.searchViewActor.Margin = new System.Windows.Forms.Padding(2);
             this.searchViewActor.Name = "searchViewActor";
@@ -163,6 +166,7 @@ namespace MissionImpossible.Views
             // searchViewDirector
             // 
             this.searchViewDirector.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchViewDirector.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.searchViewDirector.Location = new System.Drawing.Point(14, 64);
             this.searchViewDirector.Margin = new System.Windows.Forms.Padding(2);
             this.searchViewDirector.Name = "searchViewDirector";
@@ -172,6 +176,8 @@ namespace MissionImpossible.Views
             // searchViewName
             // 
             this.searchViewName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.searchViewName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.searchViewName.ForeColor = System.Drawing.SystemColors.WindowText;
             this.searchViewName.Location = new System.Drawing.Point(14, 25);
             this.searchViewName.Margin = new System.Windows.Forms.Padding(2);
             this.searchViewName.Name = "searchViewName";
@@ -182,7 +188,7 @@ namespace MissionImpossible.Views
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(234, 309);
+            this.ClientSize = new System.Drawing.Size(234, 310);
             this.Controls.Add(this.searchViewYear);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.searchViewCountry);

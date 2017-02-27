@@ -97,6 +97,7 @@ namespace MissionImpossible.Views
             this.reloadToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.reloadToolStripMenuItem.Text = "Reload";
             this.reloadToolStripMenuItem.Click += new System.EventHandler(this.OnReloadToolStripMenuItemClicked);
+      
             // 
             // exitToolStripMenuItem
             // 

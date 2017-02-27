@@ -40,10 +40,10 @@ namespace MissionImpossible.Views
             this.label5 = new System.Windows.Forms.Label();
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.helpProvider = new System.Windows.Forms.HelpProvider();
-            this.editFormCountry = new CustomTextBox();
-            this.editFormYear = new CustomTextBox();
-            this.editFormDirector = new CustomTextBox();
-            this.editFormName = new CustomTextBox();
+            this.editFormCountry = new MissionImpossible.Views.Controls.CustomTextBox();
+            this.editFormYear = new MissionImpossible.Views.Controls.CustomTextBox();
+            this.editFormDirector = new MissionImpossible.Views.Controls.CustomTextBox();
+            this.editFormName = new MissionImpossible.Views.Controls.CustomTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -193,6 +193,7 @@ namespace MissionImpossible.Views
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditView";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Редактировать фильм";
             this.ResumeLayout(false);
             this.PerformLayout();

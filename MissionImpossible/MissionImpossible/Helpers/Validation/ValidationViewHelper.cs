@@ -56,6 +56,10 @@ namespace MissionImpossible.Helpers.Validation
                 bool validated = ValidationHelper.Validate(item.Text, valType);
                 if (!validated)
                 {
+                    if (item.Text == "")
+                    {
+                        item.Text = Resources.ValidationViewHelper_ValidateListView_NoName;
+                    }
                     toolTip.ToolTipTitle = Resources.InvalidInput;
                     toolTip.Show(
                         ValidationHelper.GetErrorMessage(valType),

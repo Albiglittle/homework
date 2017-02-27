@@ -197,7 +197,7 @@
     <value>Курт Уиммер</value>
   </data>
   <data name="ActorLFishburne" xml:space="preserve">
-    <value>Лоренс Фишбёрн</value>
+    <value>Лоренс Фишберн</value>
   </data>
   <data name="ActorMDouglas" xml:space="preserve">
     <value>Майкл Дуглас</value>
@@ -327,5 +327,11 @@
   </data>
   <data name="ErrorYearIsIncorrect" xml:space="preserve">
     <value>Year is incorrect</value>
+  </data>
+  <data name="ValidationViewHelper_ValidateListView_NoName" xml:space="preserve">
+    <value>#Введите имя#</value>
+  </data>
+  <data name="MoviesController_DeleteMovie" xml:space="preserve">
+    <value>Удаление фильма</value>
   </data>
 </root>

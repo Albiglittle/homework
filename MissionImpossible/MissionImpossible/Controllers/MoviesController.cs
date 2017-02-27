@@ -6,6 +6,7 @@ using MissionImpossible.Views;
 using MissionImpossible.Helpers;
 using MissionImpossible.Properties;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using MissionImpossible.Data;
 using MissionImpossible.Helpers.Sort;
 
@@ -46,17 +47,18 @@ namespace MissionImpossible.Controllers
             _movieGetter = new GetMoviesAsyncHelper(_movieRepository, _directorRepository, _actorRepository);
         }
 
-        internal void ReloadDb()
+        internal async void ReloadDb()
         {
+            
             _dbCtx.Actors.ToList().ForEach(x => _dbCtx.Actors.Remove(x));
             _dbCtx.Directors.ToList().ForEach(x => _dbCtx.Directors.Remove(x));
             _dbCtx.Movies.ToList().ForEach(x => _dbCtx.Movies.Remove(x));
 
             _dbCtx.SaveChanges();
-
-            if (!_dbCtx.Actors.Any())
+            bool hasElement = _dbCtx.Actors.FirstOrDefault() != null;
+            if (!hasElement)
             {
-                DataInserter
+                await DataInserter
                     .InsertData(_movieRepository, _directorRepository, _actorRepository)
                     .ContinueWith(task => PerformMovieRequest());
             }
@@ -98,6 +100,7 @@ namespace MissionImpossible.Controllers
 
             _moviesView.OnSort += () => { PerformMovieRequest(); };
 
+            
             _moviesView.OnReload += ReloadDb;
 
             _movieGetter.OnStarted += () => 
@@ -154,8 +157,7 @@ namespace MissionImpossible.Controllers
             };
 
             _movieGetter.OnCompleted += onCompletedHandler;
-            
-            await _movieGetter.GetMovies(movieName, director, actor, year, country);
+            _movieGetter.GetMovies(movieName, director, actor, year, country);
 
             _moviesView.SortStarted = false;
             if (_searchView != null && !_searchView.IsDisposed)
@@ -190,7 +192,7 @@ namespace MissionImpossible.Controllers
             {
                 var res = MessageBox.Show(
                     string.Format(Resources.MovieDeletePrompt, movies[i].Name),
-                    null,
+                    Resources.MoviesController_DeleteMovie,
                     MessageBoxButtons.YesNo);
 
                 if (res.HasFlag(DialogResult.No))

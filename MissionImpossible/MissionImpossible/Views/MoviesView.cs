@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Windows.Forms;
 using MissionImpossible.Helpers;
 using MissionImpossible.Helpers.Sort;
@@ -199,7 +200,7 @@ namespace MissionImpossible.Views
         {
             gridView.Rows.Clear();
 
-            for (int i = 0; i < movies.Count; i++)
+            for (var i = 0; i < movies.Count; i++)
             {
                 gridView.Rows.Add(
                     movies[i].Name,
@@ -215,13 +216,7 @@ namespace MissionImpossible.Views
 
         private List<string> GetSelectedMovies()
         {
-            var movieNames = new List<string>();
-            foreach (DataGridViewRow row in gridView.SelectedRows)
-            {
-                var movieName = (string)row.Cells[0].Value;
-                movieNames.Add(movieName);
-            }
-            return movieNames;
+            return (from DataGridViewRow row in gridView.SelectedRows select (string) row.Cells[0].Value).ToList();
         }
         
         private void OnEditFilmToolStripMenuItemClicked(object sender, EventArgs e)
@@ -229,18 +224,18 @@ namespace MissionImpossible.Views
             var selectedMovies = GetSelectedMovies();
             if (selectedMovies.Count > 0)
             {
-                if (EditFilm != null) EditFilm(selectedMovies[0]);
+                if (EditFilm != null) EditFilm.Invoke(selectedMovies[0]);
             }
         }
 
         private void OnFindFilmToolStripMenuItemClicked(object sender, EventArgs e)
         {
-            if (FindFilm != null) FindFilm();
+            if (FindFilm != null) FindFilm.Invoke();
         }
 
         private void OnAboutToolStripMenuItemClicked(object sender, EventArgs e)
         {
-            if (AboutOpen != null) AboutOpen();
+            if (AboutOpen != null) AboutOpen.Invoke();
         }
 
         private void OnExitToolStripMenuItemClicked(object sender, EventArgs e)
@@ -259,10 +254,10 @@ namespace MissionImpossible.Views
 
         private void deleteMovieToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DeleteMovie(GetSelectedMovies());
+            if (DeleteMovie != null) DeleteMovie.Invoke(GetSelectedMovies());
         }
 
-        private Object _thisLock = new Object();
+        private object _thisLock = new object();
 
         private void OnMovieGridViewCellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -273,20 +268,24 @@ namespace MissionImpossible.Views
                 _isSortStarted = true;
                 _sortDirection = _sortDirection == SortDirection.Asc ? SortDirection.Desc : SortDirection.Asc;
                 _sortColumn = SortColumn.Year;
-                if (OnSort != null) OnSort();
+                if (OnSort != null) OnSort.Invoke();
             }
             else if (e.ColumnIndex == NameColumnIndex)
             {
                 _isSortStarted = true;
                 _sortDirection = _sortDirection == SortDirection.Asc ? SortDirection.Desc : SortDirection.Asc;
                 _sortColumn = SortColumn.Name;
-                if (OnSort != null) OnSort();
+                if (OnSort != null) OnSort.Invoke();
             }
         }
-
+        bool _dontRunHandler;
         private void OnReloadToolStripMenuItemClicked(object sender, EventArgs e)
         {
-            if (OnReload != null) OnReload();
+            if (_dontRunHandler) return;
+            System.Threading.Thread.Sleep(1000);
+            _dontRunHandler = true;
+            if (OnReload != null) OnReload.Invoke();
+            _dontRunHandler = false;
         }
 
         private void MoviesView_KeyDown(object sender, KeyEventArgs e)
@@ -295,7 +294,6 @@ namespace MissionImpossible.Views
             {
                 Close();
             }
-
         }
     }
 }

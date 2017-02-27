@@ -44,7 +44,7 @@ namespace MissionImpossible.Controllers
 
             await _movieRepository.Save(movie);
 
-            Edited();
+            if (Edited != null) Edited();
 
             _editView.Close();
         }
