@@ -34,13 +34,14 @@ namespace MissionImpossible.Controllers
 
             movie.Name = _currentMovie.Name;
             movie.Year = _currentMovie.Year;
+            movie.Country = _currentMovie.Country;
 
             Director[] existing =
                 await _directorRepository.ToArrayAsync(
                     _directorRepository.GetAll().Where(x => x.Name == _currentMovie.Director.Name));
             movie.Director = existing.Length == 0 ? new Director() { Name = _currentMovie.Director.Name } : existing[0];
             
-            movie.Actors = _currentMovie.Actors; // FIXME
+            movie.Actors = _currentMovie.Actors;
 
             await _movieRepository.Save(movie);
 

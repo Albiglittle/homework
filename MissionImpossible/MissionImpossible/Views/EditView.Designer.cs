@@ -46,6 +46,9 @@ namespace MissionImpossible.Views
             this.editFormName = new MissionImpossible.Views.Controls.CustomTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label2
@@ -76,7 +79,7 @@ namespace MissionImpossible.Views
             this.editFormActorsListView.Location = new System.Drawing.Point(37, 193);
             this.editFormActorsListView.Margin = new System.Windows.Forms.Padding(2);
             this.editFormActorsListView.Name = "editFormActorsListView";
-            this.editFormActorsListView.Size = new System.Drawing.Size(210, 161);
+            this.editFormActorsListView.Size = new System.Drawing.Size(210, 69);
             this.editFormActorsListView.TabIndex = 27;
             this.editFormActorsListView.UseCompatibleStateImageBehavior = false;
             // 
@@ -95,7 +98,7 @@ namespace MissionImpossible.Views
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 99);
+            this.label4.Location = new System.Drawing.Point(35, 101);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(25, 13);
@@ -171,12 +174,42 @@ namespace MissionImpossible.Views
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.OnCloseButtonPressed);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(172, 279);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "Выбрать файл";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.OnUploadPosterFileClick);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(34, 265);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(133, 13);
+            this.label6.TabIndex = 33;
+            this.label6.Text = "Выберите новый постер:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(37, 281);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(129, 20);
+            this.textBox1.TabIndex = 34;
+            // 
             // EditView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.CancelButton = this.button1;
             this.ClientSize = new System.Drawing.Size(281, 425);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.editFormCountry);
             this.Controls.Add(this.label5);
@@ -216,5 +249,8 @@ namespace MissionImpossible.Views
         private System.Windows.Forms.HelpProvider helpProvider;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

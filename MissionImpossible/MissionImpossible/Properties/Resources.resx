@@ -272,7 +272,7 @@
     <value>Бойцовский клуб</value>
   </data>
   <data name="MovieIAmLegend" xml:space="preserve">
-    <value>Я – легенда</value>
+    <value>Я - легенда</value>
   </data>
   <data name="MovieInterstellar" xml:space="preserve">
     <value>Интерстеллар</value>
@@ -333,5 +333,11 @@
   </data>
   <data name="MoviesController_DeleteMovie" xml:space="preserve">
     <value>Удаление фильма</value>
+  </data>
+  <data name="EditView_button2_Click_Image_Files" xml:space="preserve">
+    <value>Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG</value>
+  </data>
+  <data name="EditView_button2_Click_Open_Image" xml:space="preserve">
+    <value>Open Image</value>
   </data>
 </root>

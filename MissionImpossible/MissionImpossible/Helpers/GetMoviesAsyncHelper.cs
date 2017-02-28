@@ -39,8 +39,6 @@ namespace MissionImpossible.Helpers
                 .FindAll(movie => movie.Actors.Any(a => IsMatch(a.Name, actor))
                 );
             
-            //rawait Task.Delay(1000); // FIXME for debug purposes only
-            
             Completed(movies);
         }
 
@@ -49,9 +47,9 @@ namespace MissionImpossible.Helpers
             return string.IsNullOrEmpty(wildcard) || Regex.IsMatch(value, ConvertToRegexp(wildcard));
         }
 
-        private string ConvertToRegexp(string wildcard)
+        private static string ConvertToRegexp(string wildcard)
         {
-            string possibleCharToMatch = @"[а-яА-ЯA-Za-zёЁ0-9-!?\.\s]";
+            const string possibleCharToMatch = @"[а-яА-ЯA-Za-zёЁ0-9-!?\.\s]";
             string anyCharSequence = possibleCharToMatch + @"*";
             return wildcard.Replace("?", possibleCharToMatch).Replace("*", anyCharSequence);
         }

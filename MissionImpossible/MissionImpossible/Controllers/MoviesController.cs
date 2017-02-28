@@ -6,7 +6,6 @@ using MissionImpossible.Views;
 using MissionImpossible.Helpers;
 using MissionImpossible.Properties;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using MissionImpossible.Data;
 using MissionImpossible.Helpers.Sort;
 
@@ -49,19 +48,18 @@ namespace MissionImpossible.Controllers
 
         internal async void ReloadDb()
         {
-            
+
             _dbCtx.Actors.ToList().ForEach(x => _dbCtx.Actors.Remove(x));
             _dbCtx.Directors.ToList().ForEach(x => _dbCtx.Directors.Remove(x));
             _dbCtx.Movies.ToList().ForEach(x => _dbCtx.Movies.Remove(x));
 
             _dbCtx.SaveChanges();
-            bool hasElement = _dbCtx.Actors.FirstOrDefault() != null;
-            if (!hasElement)
-            {
-                await DataInserter
-                    .InsertData(_movieRepository, _directorRepository, _actorRepository)
-                    .ContinueWith(task => PerformMovieRequest());
-            }
+            var hasElement = _dbCtx.Actors.FirstOrDefault() != null;
+            if (hasElement) return;
+            await DataInserter
+                .InsertData(_movieRepository, _directorRepository, _actorRepository)
+                .ContinueWith(task => PerformMovieRequest());
+            MoviesView.DontRunHandler = true;
         }
 
         internal Form InitMovieView()
@@ -100,7 +98,6 @@ namespace MissionImpossible.Controllers
 
             _moviesView.OnSort += () => { PerformMovieRequest(); };
 
-            
             _moviesView.OnReload += ReloadDb;
 
             _movieGetter.OnStarted += () => 
@@ -157,7 +154,7 @@ namespace MissionImpossible.Controllers
             };
 
             _movieGetter.OnCompleted += onCompletedHandler;
-            _movieGetter.GetMovies(movieName, director, actor, year, country);
+            await _movieGetter.GetMovies(movieName, director, actor, year, country);
 
             _moviesView.SortStarted = false;
             if (_searchView != null && !_searchView.IsDisposed)
@@ -195,15 +192,10 @@ namespace MissionImpossible.Controllers
                     Resources.MoviesController_DeleteMovie,
                     MessageBoxButtons.YesNo);
 
-                if (res.HasFlag(DialogResult.No))
+                if (!res.HasFlag(DialogResult.No))
                 {
-                    return;
+                    await _movieRepository.Delete(movies[i]);
                 }
-            }
-
-            foreach (var movie in movies)
-            {
-                await _movieRepository.Delete(movie);
             }
 
             PerformMovieRequest();

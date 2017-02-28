@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using MissionImpossible.Helpers;
 using MissionImpossible.Helpers.Sort;
@@ -32,6 +33,7 @@ namespace MissionImpossible.Views
 
         private int _columnCount;
         private bool _isSortStarted;
+        internal static bool DontRunHandler = true;
         internal bool SortStarted
         {
             get { return _isSortStarted; }
@@ -257,8 +259,6 @@ namespace MissionImpossible.Views
             if (DeleteMovie != null) DeleteMovie.Invoke(GetSelectedMovies());
         }
 
-        private object _thisLock = new object();
-
         private void OnMovieGridViewCellClick(object sender, DataGridViewCellEventArgs e)
         {
             var currentRowIndex = e.RowIndex;
@@ -278,22 +278,17 @@ namespace MissionImpossible.Views
                 if (OnSort != null) OnSort.Invoke();
             }
         }
-        bool _dontRunHandler;
+
         private void OnReloadToolStripMenuItemClicked(object sender, EventArgs e)
         {
-            if (_dontRunHandler) return;
-            System.Threading.Thread.Sleep(1000);
-            _dontRunHandler = true;
-            if (OnReload != null) OnReload.Invoke();
-            _dontRunHandler = false;
+            if (!(OnReload != null & DontRunHandler)) return;
+            DontRunHandler = false;
+            OnReload.Invoke();
         }
 
         private void MoviesView_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Escape)
-            {
-                Close();
-            }
+            if (e.KeyCode == Keys.F5) reloadToolStripMenuItem.PerformClick();
         }
     }
 }

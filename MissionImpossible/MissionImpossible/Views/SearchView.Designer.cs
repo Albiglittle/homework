@@ -201,8 +201,10 @@ namespace MissionImpossible.Views
             this.Controls.Add(this.label2);
             this.Controls.Add(this.searchViewName);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(250, 348);
             this.Name = "SearchView";
             this.Text = "Поиск";

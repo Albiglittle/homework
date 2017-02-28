@@ -92,8 +92,6 @@ namespace MissionImpossible.Views
             // reloadToolStripMenuItem
             // 
             this.reloadToolStripMenuItem.Name = "reloadToolStripMenuItem";
-            this.reloadToolStripMenuItem.ShortcutKeys = System.Windows.Forms.Keys.F5;
-
             this.reloadToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.reloadToolStripMenuItem.Text = "Reload";
             this.reloadToolStripMenuItem.Click += new System.EventHandler(this.OnReloadToolStripMenuItemClicked);

@@ -431,6 +431,24 @@ namespace MissionImpossible.Properties {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Image Files (*.bmp;*.jpg;*.jpeg,*.png)|*.BMP;*.JPG;*.JPEG;*.PNG.
+        /// </summary>
+        internal static string EditView_button2_Click_Image_Files {
+            get {
+                return ResourceManager.GetString("EditView_button2_Click_Image_Files", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Open Image.
+        /// </summary>
+        internal static string EditView_button2_Click_Open_Image {
+            get {
+                return ResourceManager.GetString("EditView_button2_Click_Open_Image", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Field contains invalid characters.
         /// </summary>
         internal static string ErrorInvalidCharacters {
@@ -638,7 +656,7 @@ namespace MissionImpossible.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Я – легенда.
+        ///   Ищет локализованную строку, похожую на Я - легенда.
         /// </summary>
         internal static string MovieIAmLegend {
             get {

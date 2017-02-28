@@ -55,7 +55,6 @@ namespace MissionImpossible.Views
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.OnOkButtonClicked);
-            this.KeyDown += new System.Windows.Forms.KeyEventHandler(AboutView_KeyUp);
             // 
             // AboutView
             // 
@@ -64,12 +63,15 @@ namespace MissionImpossible.Views
             this.ClientSize = new System.Drawing.Size(304, 115);
             this.Controls.Add(this.btnOk);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AboutView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "About";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.AboutView_KeyUp);
             this.ResumeLayout(false);
             this.PerformLayout();
 
